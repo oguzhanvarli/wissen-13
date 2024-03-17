@@ -8,14 +8,17 @@ import Toast from 'react-native-toast-message'
 import { Provider } from 'react-redux'
 import { store } from './src/store/store'
 import CartDetail from './src/screens/CartDetail'
+import Splash from './src/screens/Splash'
 
 const Stack = createNativeStackNavigator()
 
 const App = () => {
+
   return (
     <Provider store={store}>
       <NavigationContainer>
         <Stack.Navigator>
+          <Stack.Screen name='Splash' component={Splash} options={{headerShown: false}} />
           <Stack.Screen name='Login' component={LoginFormik} />
           <Stack.Screen name='Home' component={Home} options={{ headerShown: false }} />
           <Stack.Screen name='CartDetail' component={CartDetail} options={{ headerShown: false }} />
